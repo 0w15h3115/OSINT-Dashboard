@@ -1,0 +1,11 @@
+[package]
+name = "osint-data"
+version.workspace = true
+edition.workspace = true
+license.workspace = true
+authors.workspace = true
+repository.workspace = true
+description = "Data processing and ingestion for OSINT platform"
+
+[dependencies]
+osint-core = { path = "../osint-core" }

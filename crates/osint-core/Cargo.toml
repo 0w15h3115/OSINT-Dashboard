@@ -1,0 +1,66 @@
+[package]
+name = "osint-core"
+version.workspace = true
+edition.workspace = true
+license.workspace = true
+authors.workspace = true
+repository.workspace = true
+description = "Core intelligence analysis engine for OSINT platform"
+
+[dependencies]
+# Core async and utilities
+tokio = { workspace = true }
+tokio-util = { workspace = true }
+rayon = { workspace = true }
+crossbeam = { workspace = true }
+
+# Serialization and data
+serde = { workspace = true }
+serde_json = { workspace = true }
+rmp-serde = { workspace = true }
+
+# ML and analytics
+# candle-core = { workspace = true }  # Temporarily disabled
+# candle-nn = { workspace = true }    # Temporarily disabled
+linfa = { workspace = true }
+ndarray = { workspace = true }
+smartcore = { workspace = true }
+
+# Geospatial
+geo = { workspace = true }
+geojson = { workspace = true }
+
+# Network analysis
+trust-dns-resolver = { workspace = true }
+reqwest = { workspace = true }
+url = { workspace = true }
+
+# Data processing
+regex = { workspace = true }
+csv = { workspace = true }
+quick-xml = { workspace = true }
+
+# Time and IDs
+chrono = { workspace = true }
+uuid = { workspace = true }
+
+# Error handling
+anyhow = { workspace = true }
+thiserror = { workspace = true }
+
+# Logging
+tracing = { workspace = true }
+
+# Compression
+zstd = { workspace = true }
+lz4_flex = { workspace = true }
+
+[dev-dependencies]
+mockall = { workspace = true }
+tokio-test = "0.4"
+
+[dependencies.async-trait]
+workspace = true
+
+[dependencies.num_cpus]
+workspace = true

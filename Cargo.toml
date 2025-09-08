@@ -1,0 +1,106 @@
+[workspace]
+members = [
+    "crates/osint-core",
+    "crates/osint-web", 
+    "crates/osint-data",
+    "crates/osint-crypto",
+    "crates/osint-cli"
+]
+resolver = "2"
+
+[workspace.package]
+version = "0.1.0"
+edition = "2021"
+license = "MIT"
+authors = ["OSINT Platform Team"]
+repository = "https://github.com/0w15h3115/OSINT-Dashboard"
+
+[workspace.dependencies]
+# Web Framework & HTTP
+axum = { version = "0.7", features = ["tokio", "tower", "macros"] }
+tower = { version = "0.4", features = ["util", "timeout", "load-shed"] }
+tower-http = { version = "0.5", features = ["fs", "trace", "cors", "compression-gzip"] }
+hyper = { version = "1.0", features = ["full"] }
+
+# Async Runtime
+tokio = { version = "1.35", features = ["full"] }
+tokio-util = { version = "0.7", features = ["codec"] }
+
+# Database & Storage
+sqlx = { version = "0.7", features = ["postgres", "runtime-tokio-rustls", "chrono", "uuid"] }
+sea-orm = { version = "0.12", features = ["sqlx-postgres", "runtime-tokio-rustls"] }
+redis = { version = "0.24", features = ["aio", "tokio-comp"] }
+
+# Serialization
+serde = { version = "1.0", features = ["derive"] }
+serde_json = "1.0"
+rmp-serde = "1.1"
+
+# Authentication & Security
+jsonwebtoken = "9.2"
+argon2 = "0.5"
+ring = "0.17"
+rustls = { version = "0.22", features = ["dangerous_configuration"] }
+chacha20poly1305 = "0.10"
+
+# ML & Analytics  
+# candle-core = "0.4"  # Temporarily disabled due to compatibility issues
+# candle-nn = "0.4"    # Will re-enable when needed
+ort = "2.0"
+linfa = "0.7"
+ndarray = "0.15"
+smartcore = "0.3"
+
+# Geospatial
+geo = "0.27"
+geojson = "0.24"
+
+# Network & DNS
+trust-dns-resolver = "0.23"
+reqwest = { version = "0.11", features = ["json", "rustls-tls"] }
+scraper = "0.18"
+url = "2.5"
+
+# Parsing & Processing
+quick-xml = "0.31"
+csv = "1.3"
+regex = "1.10"
+
+# Compression & Encoding
+zstd = "0.13"
+lz4_flex = "0.11"
+base64 = "0.21"
+
+# Logging & Observability
+tracing = "0.1"
+tracing-subscriber = { version = "0.3", features = ["env-filter"] }
+opentelemetry = "0.21"
+
+# CLI & Configuration
+clap = { version = "4.4", features = ["derive"] }
+config = "0.14"
+toml = "0.8"
+
+# Parallel Processing
+rayon = "1.8"
+crossbeam = "0.8"
+
+# Template Engine
+tera = "1.19"
+
+# Time & UUID
+chrono = { version = "0.4", features = ["serde"] }
+uuid = { version = "1.6", features = ["v4", "serde"] }
+
+# Error Handling
+anyhow = "1.0"
+thiserror = "1.0"
+eyre = "0.6"
+
+# Testing
+mockall = "0.12"
+wiremock = "0.5"
+
+# Additional dependencies
+async-trait = "0.1"
+num_cpus = "1.0"

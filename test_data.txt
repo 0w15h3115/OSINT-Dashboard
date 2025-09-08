@@ -1,0 +1,5 @@
+Suspicious activity detected from IP address 192.168.1.100 communicating with malware-command.example.com on port 443. 
+The domain was registered recently and is associated with the threat actor group APT-DEMO. 
+Email communications to admin@suspicious-domain.net were intercepted.
+GPS coordinates show activity near 40.7128,-74.0060 (New York City area).
+Hash SHA256: d2d2d2d2d2d2d2d2d2d2d2d2d2d2d2d2d2d2d2d2d2d2d2d2d2d2d2d2d2d2d2d2
